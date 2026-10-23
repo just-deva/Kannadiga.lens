@@ -70,7 +70,13 @@ class App(SimpleHTTPRequestHandler):
         encoded = json.dumps(body, ensure_ascii=False).encode("utf-8")
         self.send_response(status); self.send_header("Content-Type", "application/json; charset=utf-8"); self.send_header("Content-Length", str(len(encoded))); self.end_headers(); self.wfile.write(encoded)
 
+#  NEW WAY (dynamic port and 0.0.0.0 host for Render)
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", "4173"))
-    print(f"kannadiga.lens running at http://localhost:{port}")
-    ThreadingHTTPServer(("127.0.0.1", port), App).serve_forever()
+    PORT = int(os.environ.get("PORT", 4173))
+    server_address = ("0.0.0.0", PORT)
+
+    # Keep your exact request handler class name here!
+    httpd = HTTPServer(server_address, RequestHandlerClass)
+
+    print(f"kannadiga.lens server running on port {PORT}...")
+    httpd.serve_forever()
