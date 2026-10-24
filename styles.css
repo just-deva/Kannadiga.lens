@@ -109,3 +109,114 @@ h1, h2, h3, p, span, .brand, .lead {
 [data-theme="dark"] .tool-row input::placeholder {
   color: var(--text-muted) !important;
 }
+
+
+/* ==========================================
+   1. SPLASH SCREEN TEXT CONTRAST FIX
+   ========================================== */
+#splash p {
+  color: #e2d8f8 !important; /* Soft bright lavender for contrast */
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+#splash p strong {
+  color: #a3e635 !important; /* Vibrant lime green for 'ಅಕ್ಷರ' */
+  font-weight: 700;
+}
+
+/* ==========================================
+   2. DYNAMIC AMBIENT DOT-GRID BACKGROUND
+   ========================================== */
+:root {
+  --bg-color: #f3f4f8;
+  --dot-color: #d1d5db;
+  --card-bg: #ffffff;
+  --border-color: #1e1b4b;
+  --shadow-color: #1e1b4b; /* Hard 3D shadow color in light mode */
+  --accent-color: #6366f1;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0b0c10;
+  --dot-color: #232738;
+  --card-bg: #161822;
+  --border-color: #4f46e5;
+  --shadow-color: #6366f1; /* Glowing indigo 3D shadow in dark mode */
+}
+
+body, main, #app, .shell {
+  background-color: var(--bg-color) !important;
+  background-image: radial-gradient(var(--dot-color) 1.5px, transparent 1.5px) !important;
+  background-size: 24px 24px !important;
+}
+
+/* ==========================================
+   3. 3D SHADOW BOXES (CARDS, PANELS & DROPZONE)
+   ========================================== */
+.upload-panel,
+.reader,
+.dropzone,
+.feature-strip div {
+  background-color: var(--card-bg) !important;
+  border: 2.5px solid var(--border-color) !important;
+  border-radius: 18px !important;
+  box-shadow: 6px 6px 0px var(--shadow-color) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+/* Subtle lift animation on hover */
+.upload-panel:hover,
+.reader:hover,
+.feature-strip div:hover {
+  transform: translate(-3px, -3px) !important;
+  box-shadow: 9px 9px 0px var(--shadow-color) !important;
+}
+
+/* Inner answer container inside reader */
+.answer {
+  border: 2px dashed var(--border-color) !important;
+  border-radius: 12px !important;
+  box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================
+   4. 3D BUTTONS & INTERACTIVE CONTROLS
+   ========================================== */
+button.primary,
+button.secondary,
+#uploadButton,
+#cameraButton,
+#sampleButton,
+.tool-row button,
+#contrast {
+  border: 2px solid var(--border-color) !important;
+  box-shadow: 3px 3px 0px var(--shadow-color) !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  transition: all 0.15s ease !important;
+}
+
+/* Tactile 3D press effect on buttons */
+button.primary:hover,
+#uploadButton:hover,
+#cameraButton:hover,
+.tool-row button:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 5px 5px 0px var(--shadow-color) !important;
+}
+
+button.primary:active,
+#uploadButton:active,
+#cameraButton:active,
+.tool-row button:active {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 1px 1px 0px var(--shadow-color) !important;
+}
+
+/* Search bar 3D box */
+label.search {
+  border: 2px solid var(--border-color) !important;
+  box-shadow: 3px 3px 0px var(--shadow-color) !important;
+  border-radius: 12px !important;
+}
