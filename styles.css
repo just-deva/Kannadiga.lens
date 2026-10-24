@@ -481,3 +481,29 @@ button.secondary, #cameraButton {
   color: #f8fafc !important;
   border-color: rgba(255, 255, 255, 0.15) !important;
 }
+/* Seamless Dark Mode Fix for Reader Container & Inner Canvas */
+[data-theme="dark"] .reader,
+[data-theme="dark"] .reader-top,
+[data-theme="dark"] .tool-row {
+  background-color: var(--card-bg) !important; /* #141622 - matches dark card background */
+  color: var(--text-primary) !important;
+}
+
+/* Inner Reading Canvas */
+[data-theme="dark"] .answer {
+  background-color: #1a1d2e !important; /* Soft dark tone that blends naturally */
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Bottom Toolbar Buttons & Search Bar */
+[data-theme="dark"] .tool-row button,
+[data-theme="dark"] .tool-row label.search,
+[data-theme="dark"] .tool-row input {
+  background-color: #1a1d2e !important;
+  color: var(--text-primary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme="dark"] .tool-row input::placeholder {
+  color: var(--text-secondary) !important;
+}
