@@ -220,3 +220,102 @@ label.search {
   box-shadow: 3px 3px 0px var(--shadow-color) !important;
   border-radius: 12px !important;
 }
+
+
+/* ==========================================
+   1. COLOR THEMES (BLUE LIGHT / PINK DARK)
+   ========================================== */
+:root {
+  --bg-color: #f8fafc;
+  --dot-color: #cbd5e1;
+  --card-bg: #ffffff;
+  --text-primary: #0f172a;
+  
+  /* Light Theme: Electric Blue */
+  --accent-color: #2563eb;
+  --shadow-color: #2563eb;
+  --border-color: #2563eb;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0b0c10;
+  --dot-color: #222536;
+  --card-bg: #141622;
+  --text-primary: #f8fafc;
+  
+  /* Dark Theme: Hot Pink */
+  --accent-color: #ec4899;
+  --shadow-color: #ec4899;
+  --border-color: #ec4899;
+}
+
+/* ==========================================
+   2. BACKGROUND PATTERN & TEXT
+   ========================================== */
+body, main, #app, .shell {
+  background-color: var(--bg-color) !important;
+  background-image: radial-gradient(var(--dot-color) 1.5px, transparent 1.5px) !important;
+  background-size: 24px 24px !important;
+  color: var(--text-primary) !important;
+}
+
+/* Highlight Kannada word "ಅಕ್ಷರ" & Brand Accent */
+.hero h1 em,
+.hero em,
+.brand .accent,
+#splash p strong {
+  color: var(--accent-color) !important;
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* ==========================================
+   3. 3D SHADOW ONLY ON MAIN OUTER CARDS
+   ========================================== */
+.upload-panel,
+.reader,
+.feature-strip div {
+  background-color: var(--card-bg) !important;
+  border: 2.5px solid var(--border-color) !important;
+  border-radius: 18px !important;
+  box-shadow: 6px 6px 0px var(--shadow-color) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.upload-panel:hover,
+.reader:hover,
+.feature-strip div:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 8px 8px 0px var(--shadow-color) !important;
+}
+
+/* ==========================================
+   4. CLEAN INNER UI (REMOVES INNER CLUTTER)
+   ========================================== */
+/* Strip 3D box shadows from inner elements */
+.dropzone,
+.answer,
+.tool-row button,
+.actions button,
+label.search,
+#contrast {
+  box-shadow: none !important;
+}
+
+/* Clean dashed inner dropzone */
+.dropzone {
+  background: transparent !important;
+  border: 2px dashed var(--dot-color) !important;
+  border-radius: 12px !important;
+}
+
+/* Clean inner reader box */
+.answer {
+  background: rgba(0, 0, 0, 0.02) !important;
+  border: 1px solid var(--dot-color) !important;
+  border-radius: 12px !important;
+}
+
+[data-theme="dark"] .answer {
+  background: rgba(255, 255, 255, 0.03) !important;
+}
