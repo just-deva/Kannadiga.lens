@@ -11,10 +11,9 @@
 
 <br/>
 
-### **A lightweight, mobile-first document digitization platform converting printed/scanned Kannada media into searchable digital text with contextual English gloss.**
+ **A lightweight, mobile-first document digitization platform converting printed/scanned Kannada media into searchable digital text with contextual English gloss.**
 
 <br/>
----
 
 ### 🌐 ಲೈವ್ ಅಪ್ಲಿಕೇಶನ್ | Live Production Deployment
 
