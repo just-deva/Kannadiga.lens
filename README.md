@@ -14,6 +14,15 @@
 ### **A lightweight, mobile-first document digitization platform converting printed/scanned Kannada media into searchable digital text with contextual English gloss.**
 
 <br/>
+---
+
+### 🌐 ಲೈವ್ ಅಪ್ಲಿಕೇಶನ್ | Live Production Deployment
+
+👉 **[https://kannadiga-lens-4.onrender.com/](https://kannadiga-lens-4.onrender.com/)** 👈
+
+*No local installation or environment configuration required. Access directly in any browser on mobile or desktop.*
+
+---
 
 [Overview](#overview) • [Problem Alignment](#problem-statement-alignment) • [Key Features](#key-features) • [System Architecture](#system-architecture) • [Tech Stack](#tech-stack) • [Quick Start](#quick-start) • [Offline Demo Mode](#offline-demo-mode)
 
@@ -86,33 +95,4 @@
 
 ---
 
-## Quick Start
 
-### Prerequisites
-* Python 3.10+
-* Tesseract OCR with Kannada language data (`kan.traineddata`) installed on your local environment.
-
-### Installation & Execution
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/just-deva/Kannadiga.lens.git](https://github.com/just-deva/Kannadiga.lens.git)
-   cd Kannadiga.lens
-   ```
-
-2. **Launch the local HTTP server:**
-   ```bash
-   python server.py
-   ```
-
-3. **Access the Application:**
-   Open your browser and navigate to:
-   ```
-   http://localhost:4173
-   ```
-
----
-
-## Offline Demo Mode
-
-If Tesseract OCR is not installed locally, **kannadiga.lens** automatically falls back to **Demo Mode**. Select **"Try a sample"** on the dashboard to evaluate text rendering, real-time search, clipboard copying, and file export workflows without backend dependencies.
