@@ -12,3 +12,37 @@ $('#sampleButton').onclick=()=>{ setResult('ನಮ್ಮ ಭಾಷೆ ನಮ್�
 $('#copyButton').onclick=async()=>{await navigator.clipboard.writeText(extracted);toast('Kannada text copied');}; $('#downloadButton').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([extracted],{type:'text/plain;charset=utf-8'}));a.download='kannadiga-lens-text.txt';a.click();URL.revokeObjectURL(a.href)};
 $('#searchInput').oninput=e=>{ const q=e.target.value.trim(); kannada.innerHTML=q ? extracted.replace(new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gu'),m=>`<mark>${m}</mark>`) : extracted; };
 $('#contrast').onclick=()=>document.body.classList.toggle('contrast');
+
+
+// Connect Light/Dark Mode to existing #contrast button
+document.addEventListener('DOMContentLoaded', () => {
+  const contrastBtn = document.getElementById('contrast');
+
+  // Helper function to set theme and icon
+  const setTheme = (theme) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    if (contrastBtn) {
+      contrastBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+      contrastBtn.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
+    }
+  };
+
+  // Load saved preference or check system preference
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    setTheme('dark');
+  } else {
+    setTheme('light');
+  }
+
+  // Toggle theme on button click
+  if (contrastBtn) {
+    contrastBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+  }
+});
