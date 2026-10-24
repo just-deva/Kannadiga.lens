@@ -56,3 +56,56 @@ h1, h2, h3, p, span, .brand, .lead {
 #contrast:hover {
   transform: scale(1.1);
 }
+
+
+/* Dark Mode Fix for Reader Box & Text Visibility */
+[data-theme="dark"] {
+  --bg-color: #0b0c10;
+  --card-bg: #161822;
+  --reader-bg: #1a1c29;
+  --border-color: #2e3248;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+}
+
+/* Force Reader Card & Answer Box to Darken in Dark Mode */
+[data-theme="dark"] .reader,
+[data-theme="dark"] .answer,
+[data-theme="dark"] .reader-top,
+[data-theme="dark"] .tool-row,
+[data-theme="dark"] .upload-panel,
+[data-theme="dark"] .dropzone {
+  background-color: var(--reader-bg) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Ensure Text Elements Inside Reader are High-Contrast White/Light */
+[data-theme="dark"] .kannada,
+[data-theme="dark"] #kannadaText,
+[data-theme="dark"] .reader h1,
+[data-theme="dark"] .reader h2 {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .english,
+[data-theme="dark"] #englishText,
+[data-theme="dark"] #sourceBadge,
+[data-theme="dark"] #uploadHelp,
+[data-theme="dark"] .eyebrow {
+  color: var(--text-secondary) !important;
+}
+
+/* Dark Mode Tool Row Controls (Buttons & Search Box) */
+[data-theme="dark"] .tool-row button,
+[data-theme="dark"] .tool-row label.search,
+[data-theme="dark"] .tool-row input {
+  background-color: #222638 !important;
+  color: #ffffff !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .tool-row input::placeholder {
+  color: var(--text-muted) !important;
+}
