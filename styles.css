@@ -319,3 +319,165 @@ label.search,
 [data-theme="dark"] .answer {
   background: rgba(255, 255, 255, 0.03) !important;
 }
+
+/* ==========================================
+   1. COLOR THEMES (DEEP ROYAL BLUE & HOT PINK)
+   ========================================== */
+:root {
+  --bg-color: #f8fafc;
+  --dot-color: #cbd5e1;
+  --card-bg: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  
+  /* Light Theme: Deeper Royal Blue */
+  --accent-color: #1e3a8a;
+  --shadow-color: #1e3a8a;
+  --border-color: #1e3a8a;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0b0c10;
+  --dot-color: #222536;
+  --card-bg: #141622;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  
+  /* Dark Theme: Hot Pink */
+  --accent-color: #ec4899;
+  --shadow-color: #ec4899;
+  --border-color: #ec4899;
+}
+
+/* ==========================================
+   2. GLOBAL BACKGROUND & ACCENT TEXT
+   ========================================== */
+body, main, #app, .shell {
+  background-color: var(--bg-color) !important;
+  background-image: radial-gradient(var(--dot-color) 1.5px, transparent 1.5px) !important;
+  background-size: 24px 24px !important;
+  color: var(--text-primary) !important;
+}
+
+/* Kannada Word 'ಅಕ್ಷರ' & Brand Accent */
+.hero h1 em,
+.hero em,
+.brand .accent,
+#splash p strong {
+  color: var(--accent-color) !important;
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* ==========================================
+   3. 3D SHADOW ONLY ON MAIN OUTER CARDS
+   ========================================== */
+.upload-panel,
+.reader,
+.feature-strip div {
+  background-color: var(--card-bg) !important;
+  border: 2.5px solid var(--border-color) !important;
+  border-radius: 18px !important;
+  box-shadow: 6px 6px 0px var(--shadow-color) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.upload-panel:hover,
+.reader:hover,
+.feature-strip div:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 8px 8px 0px var(--shadow-color) !important;
+}
+
+/* ==========================================
+   4. STRIP 3D SHADOWS FROM ALL INNER BUTTONS & INPUTS
+   ========================================== */
+.dropzone,
+.answer,
+.actions button,
+button.primary,
+button.secondary,
+#uploadButton,
+#cameraButton,
+#sampleButton,
+.sample,
+.tool-row button,
+label.search,
+#contrast {
+  box-shadow: none !important; /* Removes 3D offset clutter from inner items */
+  transform: none !important;
+}
+
+/* Clean inner dropzone & answer containers */
+.dropzone {
+  background: transparent !important;
+  border: 2px dashed var(--dot-color) !important;
+  border-radius: 12px !important;
+}
+
+/* Primary/Secondary Inner Action Buttons */
+button.primary, #uploadButton {
+  background-color: #4f46e5 !important;
+  color: #ffffff !important;
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+}
+
+button.secondary, #cameraButton {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--dot-color) !important;
+  border-radius: 10px !important;
+}
+
+[data-theme="dark"] button.secondary, 
+[data-theme="dark"] #cameraButton {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+/* Sample Button in Dark Mode */
+#sampleButton, .sample {
+  color: var(--accent-color) !important;
+  background: transparent !important;
+  border: 1px solid var(--dot-color) !important;
+  border-radius: 10px !important;
+}
+
+/* ==========================================
+   5. DARK MODE READER & TEXT VISIBILITY FIX
+   ========================================== */
+[data-theme="dark"] .reader,
+[data-theme="dark"] .answer {
+  background-color: #181a28 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Kannada Extracted Text Visibility */
+.kannada, #kannadaText {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .kannada,
+[data-theme="dark"] #kannadaText {
+  color: #ffffff !important; /* High contrast white in dark mode */
+}
+
+/* English Gloss Text Visibility */
+.english, #englishText {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .english,
+[data-theme="dark"] #englishText {
+  color: #cbd5e1 !important;
+}
+
+/* Reader Tool Buttons & Search Bar */
+[data-theme="dark"] .tool-row button,
+[data-theme="dark"] label.search,
+[data-theme="dark"] label.search input {
+  background-color: #212538 !important;
+  color: #f8fafc !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
