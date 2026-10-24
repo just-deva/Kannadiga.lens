@@ -507,3 +507,33 @@ button.secondary, #cameraButton {
 [data-theme="dark"] .tool-row input::placeholder {
   color: var(--text-secondary) !important;
 }
+/* ==========================================
+   FIX: ELIMINATE CREAM OUTER FRAME IN DARK MODE
+   ========================================== */
+[data-theme="dark"] .reader,
+[data-theme="dark"] article.reader,
+[data-theme="dark"] .workspace .reader,
+[data-theme="dark"] .reader-top,
+[data-theme="dark"] .tool-row {
+  background-color: #141622 !important;
+  background: #141622 !important;
+  color: #f8fafc !important;
+}
+
+/* Inner reading canvas box */
+[data-theme="dark"] .answer {
+  background-color: #1e2235 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+}
+
+/* Kannada and English text contrast inside answer box */
+[data-theme="dark"] .kannada,
+[data-theme="dark"] #kannadaText {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .english,
+[data-theme="dark"] #englishText {
+  color: #cbd5e1 !important;
+}
