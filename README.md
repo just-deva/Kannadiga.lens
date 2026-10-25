@@ -19,7 +19,7 @@
 
 👉 **[https://kannadiga-lens-4.onrender.com/](https://kannadiga-lens-4.onrender.com/)** 👈
 
-*No local installation or environment configuration required. Access directly in any browser on mobile or desktop.*
+*(Might take a while to open the website because it's free-tier web services spin down and go to sleep after 15 minutes of inactivity) No local installation or environment configuration required. Access directly in any browser on mobile or desktop.*
 
 ---
 
